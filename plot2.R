@@ -1,11 +1,11 @@
 
 ## Load Data
-D <- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?",nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
-D$Date <- as.Date(D$Date, format="%d/%m/%Y")
+dataset <- read.csv("household_power_consumption.txt", header=T, sep=';', na.strings="?",nrows=2075259, check.names=F, stringsAsFactors=F, comment.char="", quote='\"')
+dataset$Date <- as.Date(dataset$Date, format="%d/%m/%Y")
 
 ## Subset Data
-data_sub <- subset(D, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
-rm(D)
+data_sub <- subset(dataset, subset=(Date >= "2007-02-01" & Date <= "2007-02-02"))
+rm(dataset)
 
 ## Date Conversion
 datetime <- paste(as.Date(data_sub$Date), data_sub$Time)
