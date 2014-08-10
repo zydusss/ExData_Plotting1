@@ -11,6 +11,6 @@ dataset$Date <- as.Date(dataset$Date, "%d/%m/%Y")
 dates <- as.Date(c("2007-01-02", "2007-02-02"), "%Y-%d-%m")
 dataset <- subset(dataset, Date %in% dates)
   
-png("plot1.png", width=400, height=400)
+png("plot1.png", width=480, height=480)
 hist(as.numeric(dataset$Global_active_power), main="Global Active Power",xlab="Global Active Power (kilowatts)",ylab="Frequency", col="red")
 dev.off()
